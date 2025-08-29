@@ -1,0 +1,46 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  background: #1976d2; /* Hexaware blue */
+  color: white;
+}
+
+.brand {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.desktop-menu {
+  display: flex;
+  gap: 10px;
+}
+
+.mobile-toggle {
+  display: none;
+}
+
+/* Mobile styles */
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  color: black;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+  .desktop-menu {
+    display: none;
+  }
+  .mobile-toggle {
+    display: block;
+  }
+}

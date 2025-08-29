@@ -1,0 +1,68 @@
+<div class="chat-wrapper">
+  <!-- Left FAQ -->
+  <div class="faq-panel">
+    <h3>❓ Frequently Asked</h3>
+    <ul>
+      
+      <li>Does Hexaware provide relocation support?</li>
+      <li>What is the salary structure and benefits?</li>
+      <li>What is the leave policy during training?</li>
+      <li>Are work from home options available?</li>
+      <li>What is the work culture like?</li>
+      <li>What is the dress code?</li>
+      <li>Is laptop/IT setup provided before joining?</li>
+      <li>Can I defer or postpone my joining date?</li>
+      <li>What if I miss the induction program?</li>
+      <li>Who should I contact if I face issues with documents?</li>
+      <li>Will I get client/project allocation immediately after training?</li>
+      <li>What is the performance review process during probation?</li>
+      <li>Are there opportunities for higher studies or certifications?</li>
+      <li>How can I reach HR or the onboarding team for queries?</li>
+    </ul>
+  </div>
+
+  <!-- Chatbot -->
+  <div class="chat-panel">
+    <div class="chat-header">🤖 Onboarding Assistant</div>
+
+    <!-- ✅ Scrollable messages -->
+    <div class="chat-messages" #chatMessages>
+      <div *ngFor="let msg of messages" [ngClass]="msg.sender">
+        {{ msg.text }}
+      </div>
+    </div>
+
+    <!-- Input area -->
+    <div class="chat-input">
+      <input
+        [(ngModel)]="userInput"
+        placeholder="Ask me anything..."
+        (keydown.enter)="sendMessage()"
+      />
+      <button (click)="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <!-- Right Tips -->
+  <div class="tips-panel">
+    <h3>💡 You can ask:</h3>
+    <ul>
+      <li>When will I get my offer letter and joining date?</li>
+      <li>What are the exact documents required for onboarding?</li>
+      <li>How long is the training and what technologies are covered?</li>
+      <li>What happens if I fail to complete the training?</li>
+      <li>How does background verification impact my joining?</li>
+      <li>What is the duration of the probation period?</li>
+      <li>Does Hexaware provide travel or relocation assistance?</li>
+      
+      <li>Will Hexaware provide a laptop and email account before joining?</li>
+      <li>Can I request to delay my joining if I have personal reasons?</li>
+      <li>What should I do if I miss the induction session?</li>
+      <li>How soon will I be allocated to a client project?</li>
+      <li>Are there chances of onsite opportunities after joining?</li>
+      <li>What certifications or skill upgrades does Hexaware sponsor?</li>
+      <li>How can I contact HR if I don’t get responses on email?</li>
+      <li>What is the escalation process for onboarding issues?</li>
+    </ul>
+  </div>
+</div>

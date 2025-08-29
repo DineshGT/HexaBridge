@@ -1,0 +1,131 @@
+.tracker-container {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 30px;
+  border-radius: 16px;
+  text-align: center;
+  background: linear-gradient(135deg, #f3f9ff, #ffffff);
+
+  h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 10px;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 25px;
+  }
+
+  /* Progress Wrapper */
+  .progress-wrapper {
+    margin-bottom: 30px;
+    text-align: center;
+
+    mat-progress-bar {
+      height: 12px;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 8px;
+    }
+
+    /* Make progress bar colorful */
+    ::ng-deep .mat-mdc-progress-bar .mdc-linear-progress__bar-inner {
+      background: linear-gradient(90deg, #ff4d4d, #ff9933, #00cc66, #3399ff, #9933ff);
+    }
+
+    span {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #444;
+    }
+  }
+
+  /* Stepper Customization */
+  mat-vertical-stepper {
+    background: transparent;
+  }
+
+  mat-step {
+    margin-bottom: 25px;
+    border-radius: 12px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease;
+  }
+
+  mat-step:hover {
+    transform: translateY(-4px);
+  }
+
+  .step-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: #333;
+
+    .emoji {
+      font-size: 1.3rem;
+    }
+  }
+
+  .step-content {
+    margin-top: 10px;
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+      color: #444;
+    }
+
+    .actions {
+      display: flex;
+      gap: 15px;
+    }
+
+    button {
+      border-radius: 25px;
+      padding: 10px 20px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    button[color="primary"] {
+      background: linear-gradient(135deg, #3399ff, #66ccff);
+      color: #fff;
+    }
+    button[color="primary"]:hover {
+      background: linear-gradient(135deg, #1a75d1, #33b5ff);
+    }
+
+    button[color="accent"] {
+      background: linear-gradient(135deg, #00cc66, #33e699);
+      color: #fff;
+    }
+    button[color="accent"]:hover {
+      background: linear-gradient(135deg, #00994d, #26cc7a);
+    }
+  }
+}
+
+/* Give each step a unique color border */
+::ng-deep .mat-step-header:nth-child(1) {
+  border-left: 6px solid #ff4d4d;
+}
+::ng-deep .mat-step-header:nth-child(2) {
+  border-left: 6px solid #ff9933;
+}
+::ng-deep .mat-step-header:nth-child(3) {
+  border-left: 6px solid #00cc66;
+}
+::ng-deep .mat-step-header:nth-child(4) {
+  border-left: 6px solid #3399ff;
+}
+::ng-deep .mat-step-header:nth-child(5) {
+  border-left: 6px solid #9933ff;
+}

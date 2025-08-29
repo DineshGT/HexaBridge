@@ -1,0 +1,74 @@
+.industries {
+  padding: 60px 20px;
+  background: #ffffff; // clean white background
+  text-align: center;
+
+  .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #004aad; // Hexaware deep blue
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 60%;
+      height: 3px;
+      margin: 8px auto 0;
+      background: #007bff; // accent underline
+      border-radius: 3px;
+    }
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+    color: #555;
+    max-width: 750px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+  }
+
+  .industries-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .industry-card {
+    background: #f8fbff; // soft light blue tint
+    border-radius: 12px;
+    padding: 20px;
+    text-align: left;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    mat-card-header {
+      margin-bottom: 10px;
+
+      mat-card-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #004aad;
+      }
+    }
+
+    mat-card-content {
+      p {
+        font-size: 0.95rem;
+        color: #444;
+        line-height: 1.5;
+      }
+    }
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+      border: 1px solid #007bff;
+      background: #ffffff; // brighten on hover
+    }
+  }
+}

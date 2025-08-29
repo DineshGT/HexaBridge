@@ -1,0 +1,17 @@
+<section class="industries">
+  <h2 class="section-title">Industries We Serve</h2>
+  <p class="section-subtitle">
+    Partnering with enterprises across diverse industries to deliver technology-driven growth and transformation.
+  </p>
+
+  <div class="industries-grid">
+    <mat-card *ngFor="let industry of industries" class="industry-card">
+      <mat-card-header>
+        <mat-card-title>{{ industry.title }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ industry.description }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</section>

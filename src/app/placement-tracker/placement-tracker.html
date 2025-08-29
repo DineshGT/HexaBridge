@@ -1,0 +1,45 @@
+<div class="tracker-container">
+  <h1>Placement Progress Tracker</h1>
+  <p class="subtitle">Follow your journey with Hexaware 🚀</p>
+
+  <!-- Progress Bar -->
+  <div class="progress-wrapper">
+    <mat-progress-bar mode="determinate" [value]="progress"></mat-progress-bar>
+    <span>{{ steps.filter(s => s.done).length }} / {{ steps.length }} completed</span>
+  </div>
+
+  <!-- Stepper -->
+  <mat-vertical-stepper [linear]="false" #stepper>
+    <ng-container *ngFor="let step of steps; let i = index">
+      <mat-step [completed]="step.done">
+        <ng-template matStepLabel>
+          <span class="step-label">
+            <span class="emoji">
+              <!-- Add emojis per step -->
+              <ng-container [ngSwitch]="i">
+                <span *ngSwitchCase="0">📝</span>
+                <span *ngSwitchCase="1">🎯</span>
+                <span *ngSwitchCase="2">💼</span>
+                <span *ngSwitchCase="3">🎉</span>
+                <span *ngSwitchCase="4">🚀</span>
+              </ng-container>
+            </span>
+            {{ step.label }}
+          </span>
+        </ng-template>
+
+        <div class="step-content">
+          <p>{{ step.action }}</p>
+          <div class="actions">
+            <button mat-raised-button color="primary" (click)="markAsDone(i)" *ngIf="!step.done">
+              Mark as Done
+            </button>
+            <button mat-raised-button color="accent" (click)="stepper.next()" *ngIf="i < steps.length - 1 && step.done">
+              Next Step
+            </button>
+          </div>
+        </div>
+      </mat-step>
+    </ng-container>
+  </mat-vertical-stepper>
+</div>

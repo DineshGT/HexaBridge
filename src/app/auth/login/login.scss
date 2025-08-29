@@ -1,0 +1,66 @@
+.auth-container {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 40px 30px;
+  background: #f9f9f9; /* light gray card */
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  text-align: center;
+
+  h2 {
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: #003366; // dark blue heading
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .full-width {
+    width: 100%;
+  }
+
+  mat-form-field {
+    background: #fff;
+    border-radius: 6px;
+  }
+
+  button {
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  /* Login (primary - dark blue) */
+  button[color="primary"] {
+    background: #003366;
+    color: #fff;
+  }
+  button[color="primary"]:hover {
+    background: #00264d;
+  }
+
+  /* Signup (accent - medium blue) */
+  button[color="accent"] {
+    background: #0066cc;
+    color: #fff;
+  }
+  button[color="accent"]:hover {
+    background: #004c99;
+  }
+}
+
+/* Page background */
+body {
+  background: linear-gradient(135deg, #e6e6e6, #d9e6f2); /* grayish-blue gradient */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

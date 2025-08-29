@@ -1,0 +1,47 @@
+<mat-toolbar color="primary" class="navbar">
+  <!-- Brand -->
+  <span class="brand">HexaBridge</span>
+
+  <!-- Desktop Menu -->
+  <span class="spacer"></span>
+  <nav class="desktop-menu">
+    <a mat-button routerLink="/">Home</a>
+    <a mat-button routerLink="/services">Services</a>
+    <a mat-button routerLink="/platforms">Platforms</a>
+    <a mat-button routerLink="/industries">Industries</a>
+    <a mat-button routerLink="/about">About</a>
+
+    <!-- Auth buttons -->
+    <ng-container *ngIf="auth.isLoggedIn(); else loggedOutDesktop">
+      <a mat-button (click)="logout()">Logout</a>
+    </ng-container>
+    <ng-template #loggedOutDesktop>
+      <a mat-button routerLink="/login">Login</a>
+      <a mat-stroked-button color="accent" routerLink="/signup">Signup</a>
+    </ng-template>
+  </nav>
+
+  <!-- Mobile Menu (Hamburger) -->
+  <button mat-icon-button class="mobile-toggle" (click)="toggleMenu()">
+    <mat-icon>menu</mat-icon>
+  </button>
+</mat-toolbar>
+
+<!-- Mobile Dropdown -->
+<div *ngIf="mobileMenuOpen" class="mobile-menu">
+  <a mat-list-item routerLink="/" (click)="closeMenu()">Home</a>
+  <a mat-list-item routerLink="/services" (click)="closeMenu()">Services</a>
+  <a mat-list-item routerLink="/platforms" (click)="closeMenu()">Platforms</a>
+  <a mat-list-item routerLink="/industries" (click)="closeMenu()">Industries</a>
+  <a mat-list-item routerLink="/about" (click)="closeMenu()">About</a>
+
+  <!-- Auth buttons for mobile -->
+  <ng-container *ngIf="auth.isLoggedIn(); else loggedOutMobile">
+    <a mat-list-item routerlink="/Home" (click)="logout(); closeMenu()">Logout</a>
+  </ng-container>
+
+  <ng-template #loggedOutMobile>
+    <a mat-list-item routerLink="/login" (click)="closeMenu()">Login</a>
+    <a mat-list-item routerLink="/signup" (click)="closeMenu()">Signup</a>
+  </ng-template>
+</div>

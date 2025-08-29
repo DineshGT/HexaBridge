@@ -1,0 +1,17 @@
+<section class="about">
+  <h2 class="section-title">About Us</h2>
+  <p class="section-subtitle">
+    Learn more about Hexaware’s vision, values, and the ecosystem we are building together.
+  </p>
+
+  <div class="about-grid">
+    <mat-card *ngFor="let item of aboutItems" class="about-card">
+      <mat-card-header>
+        <mat-card-title>{{ item.title }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ item.description }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</section>

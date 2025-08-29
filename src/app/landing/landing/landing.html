@@ -1,0 +1,12 @@
+<div class="landing-container">
+  <div class="overlay"></div>
+  <div class="landing-card">
+    <h1>Welcome to <span class="brand">HexaBridge</span></h1>
+    <p class="tagline">Empowering your journey with technology & innovation</p>
+
+    <div *ngIf="!isLoggedIn" class="actions">
+      <button class="btn primary" (click)="goLogin()">Login</button>
+      <button class="btn secondary" (click)="goSignup()">Sign Up</button>
+    </div>
+  </div>
+</div>

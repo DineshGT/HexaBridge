@@ -1,0 +1,182 @@
+.home-container {
+  font-family: 'Segoe UI', sans-serif;
+  color: #222;
+
+  /* 🔹 Banner */
+  .banner {
+    background: linear-gradient(135deg, #004aad, #007bff);
+    color: #fff;
+    padding: 100px 20px;
+    text-align: center;
+
+    .banner-text {
+      max-width: 800px;
+      margin: 0 auto;
+
+      h1 {
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      h2 {
+        font-size: 1.6rem;
+        font-weight: 500;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 1.1rem;
+        opacity: 0.9;
+      }
+    }
+  }
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 50px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+
+  .home-card {
+    display: flex;
+    flex-direction: column; /* Ensures button sticks to bottom */
+    justify-content: space-between;
+    min-height: 30px; /* Same height for consistency */
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin: 15px 0 10px;
+    }
+
+    p {
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+      flex-grow: 1; /* Pushes button down */
+    }
+
+    button {
+      margin-top: auto;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  /* 🎨 Unique colors per card */
+  .assistant-card {
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Purple → Blue */
+  }
+
+  .tracker-card {
+    background: linear-gradient(135deg, #ff512f, #dd2476); /* Orange → Pink */
+  }
+
+  .fresher-card {
+    background: linear-gradient(135deg, #11998e, #38ef7d); /* Teal → Green */
+  }
+}
+}
+/* 🔹 Purpose Section */
+.purpose-section {
+  background: #f8fbff;
+  text-align: center;
+  padding: 60px 20px;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #004aad;
+    margin-bottom: 15px;
+  }
+
+  p {
+    max-width: 800px;
+    margin: 0 auto 20px;
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+  }
+
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+
+    .info-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 25px;
+      width: 320px;
+      text-align: left;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #004aad;
+      }
+
+      p, ul {
+        font-size: 0.95rem;
+        color: #444;
+        line-height: 1.5;
+      }
+
+      &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+      }
+    }
+  }
+}
+
+/* 🔹 Footer */
+.footer {
+  background: #004aad;
+  color: #fff;
+  text-align: center;
+  padding: 25px 20px;
+  margin-top: 60px;
+
+  p {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    a {
+      color: #fff;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #f1f1f1;
+        text-decoration: underline;
+      }
+    }
+  }
+}

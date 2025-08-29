@@ -1,0 +1,135 @@
+.chat-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 15px;
+  height: 85vh;
+  padding: 15px;
+  background: #f4f6f9;
+  box-sizing: border-box;
+}
+
+/* Panels */
+.faq-panel,
+.tips-panel {
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  font-size: 14px;
+}
+
+.faq-panel h3,
+.tips-panel h3 {
+  margin: 0 0 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+ul {
+  margin: 0;
+  padding-left: 18px;
+  list-style: disc;
+  line-height: 1.6;
+}
+
+/* Chat Panel */
+.chat-panel {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.chat-header {
+  background: linear-gradient(135deg, #1976d2, #42a5f5);
+  color: white;
+  padding: 12px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 16px;
+}
+
+/* Messages */
+.chat-messages {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #fafafa;
+}
+
+.user {
+  align-self: flex-end;
+  background: #1976d2;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 12px 12px 0 12px;
+  max-width: 75%;
+  word-wrap: break-word;
+}
+
+.bot {
+  align-self: flex-start;
+  background: #e9ecef;
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 12px 12px 12px 0;
+  max-width: 75%;
+  word-wrap: break-word;
+}
+
+/* Input area */
+.chat-input {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  background: #fff;
+}
+
+.chat-input input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 8px;
+  background: #f4f6f9;
+  margin-right: 8px;
+}
+
+.chat-input button {
+  border: none;
+  background: #1976d2;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Hover effect */
+.chat-input button:hover {
+  background: #1565c0;
+}
+
+/* ✅ Responsive design */
+@media (max-width: 900px) {
+  .chat-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+  }
+
+  .faq-panel,
+  .tips-panel {
+    display: none; /* hide side panels on mobile */
+  }
+
+  .chat-panel {
+    height:100%;
+  }
+}

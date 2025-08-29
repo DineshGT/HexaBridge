@@ -1,0 +1,26 @@
+body {
+  background: #f9fafc;
+  color: #333;
+  margin: 0;
+  font-family: Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+h1, h2 {
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+section {
+  padding: 40px 20px;
+}
+
+/* app.scss */
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+router-outlet {
+  padding: 1.5rem;
+}
