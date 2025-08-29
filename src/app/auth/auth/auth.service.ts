@@ -1,34 +1,28 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:5157/api/auth';
+  // No backend API needed
   private loggedIn$ = new BehaviorSubject<boolean>(!!this.getToken());
 
-  constructor(private http: HttpClient) {}
+  constructor() {}
 
+  // Dummy signup: returns success immediately
   signup(userData: any): Observable<any> {
-    const payload = {
-      id: 0,
-      username: userData.email,
-      password: userData.password,
-      email: userData.email
-    };
-    return this.http.post(`${this.apiUrl}/register`, payload);
+    console.log('Signup called with:', userData);
+    // Return a fake success response
+    return of({ success: true, message: 'User registered successfully!' });
   }
 
+  // Dummy login: returns a fake token
   login(credentials: any): Observable<any> {
-    const payload = {
-      id: 0,
-      username: credentials.email,
-      password: credentials.password,
-      email: credentials.email
-    };
-    return this.http.post(`${this.apiUrl}/login`, payload);
+    console.log('Login called with:', credentials);
+    const fakeToken = 'dummy-token';
+    this.saveToken(fakeToken);
+    return of({ success: true, token: fakeToken, message: 'Login successful!' });
   }
 
   saveToken(token: string) {
